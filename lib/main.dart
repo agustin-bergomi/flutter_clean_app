@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_clean_architecture/features/daily_news/presentation/pages/home/daily_news.dart';
 
-void main() {
+import 'config/theme/app_themes.dart';
+
+void main() async {
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
@@ -11,9 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-    ),
-  };
-}
+      theme: theme(),
+      home: const DailyNews(),
+    );
+  }
